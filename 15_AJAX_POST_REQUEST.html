@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Post Request</title>
+</head>
+<body>
+     
+    <script>
+        // 15.AJAX Post Request:
+        // a. Implement a JavaScript function that sends an AJAX POST request to the following URL: "https://api.example.com/submit".
+        // b. Send a JSON payload with the following data: { "name": "John Doe", "email": "johndoe@example.com" }.
+
+        async function postData() {
+            let URL = 'https://api.example.com/submit';
+            let data = {
+                name: 'John Doe',
+                email: 'john@gmail.com'
+            };
+            let result = await axios.post(URL, data);
+            if (result.data) {
+                console.log(result.data);
+            }
+            else {
+                console.log('Error');
+            }
+        }
+    </script>
+</body>
+</html>

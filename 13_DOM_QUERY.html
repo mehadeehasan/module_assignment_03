@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Query Selector</title>
+</head>
+<body>
+     <!-- ##13.DOM Query Selector: 
+     a. Create a webpage with multiple paragraphs containing different classes and IDs. -->
+
+     <p class="para_1">Create a webpage with multiple paragraphs containing different classes and IDs.</p>
+     <p class="para_2">Implement a JavaScript function that selects all paragraphs with a specific class and changes.</p>
+    <button onclick="apply()">Click Me</button>
+    <script>
+        /* b. Implement a JavaScript function that selects all paragraphs with a specific class and changes 
+        their text color to red. */
+        var ptag = document.querySelector("p");
+        function apply() {
+                ptag.className = "newpara";
+                ptag.classList.add("newpara");
+                
+                var temp = document.querySelectorAll(".newpara");
+
+                for (var i = 0; i < temp.length; i++) {
+                    temp[i].style.color = "red";
+                }
+            }
+    </script>
+</body>
+</html>

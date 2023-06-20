@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIME NUMBER</title>
+</head>
+<body>
+    <!-- ##03.Number: -->
+    <!-- #a. Write a JavaScript function that takes a positive integer as input and returns true 
+        if it is a prime number, otherwise returns false. -->
+    <p id="numberCheck"></p>
+    <p id="outCheck"></p>
+    <script>
+        let x= prompt("Please insert a positive number ");
+        
+        let i =document.getElementById("numberCheck");
+        i.innerHTML = `Input: ${x}`
+
+        function primeNumberChk(number){
+            let isPrime = true;
+            if (number == 1) {
+                return false;
+            }
+            else if (number > 1) {
+                for (let i = 2; i < number; i++) {
+                    if (number % i == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            else {
+                return false;
+            }
+            }
+            /*#b. Implement the function to check if a given positive integer is a prime number. */
+            let y = primeNumberChk(x);
+            let p =document.getElementById("outCheck");
+                p.innerHTML = `Output: ${y}`
+    </script>
+</body>
+</html>

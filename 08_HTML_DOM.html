@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM Document</title>
+</head>
+<body>
+    <!-- ##HTML DOM Document -->
+    <!-- #a. a. Create a webpage with a button and a paragraph element. -->
+    <p id="para">Input paragraph</p>
+    <button id="btn_press"> Click</button>
+    <script>
+        /*#b. Implement a JavaScript function that changes the text content of the paragraph
+         element to "Button Clicked!" when the button is clicked.*/
+
+        document.getElementById("btn_press").addEventListener("click", click_btn_press);
+
+        let count = 0;
+        function click_btn_press(){
+            let para_tag = document.getElementById("para");
+                para_tag.innerHTML = `Button Clicked ${count++}`;
+        }
+        
+
+
+    </script>
+</body>
+</html>

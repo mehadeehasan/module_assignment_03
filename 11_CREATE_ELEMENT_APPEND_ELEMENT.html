@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element and Append Element</title>
+</head>
+<body>
+    <!-- ##11.Create Element & Append Element: -->
+    <!-- a. Create a webpage with an empty unordered list (<ul>). -->
+    <ul id="list"></ul>
+    <!--  b. Implement a JavaScript function that dynamically creates five list items (<li>) with sequential numbers (1 to 5) 
+        and appends them to the unordered list. -->
+    <script>       
+            const list = document.getElementById('list');
+            for (let i = 1; i <= 5; i++) {
+                const li = document.createElement('li');
+                li.innerHTML = i;
+                list.appendChild(li);
+            }
+
+    </script>
+</body>
+</html>

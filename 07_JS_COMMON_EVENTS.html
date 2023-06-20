@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Common Events</title>
+</head>
+<body>
+    <!-- ##07. JS Common Events -->
+    <!-- Implement a webpage with the following functionality: -->
+         
+    <h4>a. Please clicks anywhere on the page and show coordinates (x, y) of the click.</h4>
+    <h4>b. Please presses any key on the keyboard for output.</h4>
+    <h4>c. Please moves the mouse over or out from the image</h4>
+    
+    <p id="mouseClick"></p>
+    <p id="kepPress"></p>
+    <img src="img/still.jpg" alt="NONE"  width="400" height="500">
+
+    <script>
+        /* When the user clicks anywhere on the page, display an alert with the coordinates (x, y) of the click. */
+        document.addEventListener('click', (e) => {
+            alert(`Coordinate of X: ${e.clientX}, Y: ${e.clientY}`);
+            document.getElementById('mouseClick').innerHTML = `Coordinate of X: ${e.clientX}, Y: ${e.clientY}`;
+        });
+        
+        // #b. When the user presses any key on the keyboard, display an alert with the key code of the pressed key.
+
+        document.addEventListener('keydown', (e) => {
+            alert( `You have pressed: ${String.fromCharCode(e.keyCode)}`);
+            document.getElementById('kepPress').innerHTML = `You have pressed: ${String.fromCharCode(e.keyCode)}`;
+        });
+
+        // #c. When the user moves the mouse over an image, change the image source to another image of your choice.
+        
+        const img = document.querySelector('img');
+        img.addEventListener('mouseover', () => {
+            img.src = 'img/mouseover.jpg';
+        });
+        const oldimg = document.querySelector('img');
+        oldimg.addEventListener('mouseout', () => {
+            img.src = 'img/still.jpg';
+        });
+        
+        
+
+    </script>
+</body>
+</html>

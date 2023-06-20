@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator Object</title>
+</head>
+<body>
+    <!-- ##01.Navigator Object: -->
+    <!-- #a. Write a JavaScript function that detects the user's browser name and version using the navigator object. -->
+    
+    <p id="brwname"></p>
+    <script>
+      function getBrowser() {
+        const userAgent = navigator.userAgent;
+        let browserName = "";
+        let browserVersion = "";
+        console.log(userAgent);
+        if (userAgent.indexOf("Firefox") > -1) {
+            browserName = "Firefox";
+            browserVersion = userAgent.match(/Firefox\/([\d.]+)/)[1];
+        } else if (userAgent.indexOf("Chrome") > -1) {
+            browserName = "Chrome";
+            browserVersion = userAgent.match(/Chrome\/([\d.]+)/)[1];
+        } else if (userAgent.indexOf("Safari") > -1) {
+            browserName = "Safari";
+            browserVersion = userAgent.match(/Version\/([\d.]+)/)[1];
+        } else if (userAgent.indexOf("Opera") > -1) {
+            browserName = "Opera";
+            browserVersion = userAgent.match(/Opera\/([\d.]+)/)[1];
+        } else if (userAgent.indexOf("Edge") > -1) {
+            browserName = "Microsoft Edge";
+            browserVersion = userAgent.match(/Edge\/([\d.]+)/)[1];
+        } else if (userAgent.indexOf("Trident") > -1) {
+            browserName = "Internet Explorer";
+            browserVersion = userAgent.match(/rv:([\d.]+)/)[1];
+        } else {
+            browserName = "Unknown";
+        }
+
+      return `Browser Name: ${browserName}, version: ${browserVersion}`;
+      };
+    
+        /*#b. Implement the function to display the user's browser name and version. */
+
+        let d= getBrowser();
+        let p=document.getElementById("brwname");
+        p.innerHTML = `Output: ${d}`
+
+    </script>
+</body>
+</html>
